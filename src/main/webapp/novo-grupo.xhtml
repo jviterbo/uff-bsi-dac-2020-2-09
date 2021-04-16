@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+        <ui:composition template = "simpleTemplate.xhtml">	
+            <ui:define name = "top">
+                <h1>Diário de Classe</h1>
+            </ui:define>
+            <ui:define name = "content">
+                <br />
+                <h:form>
+                    Projeto: <h:inputText value="#{grupoBean.projeto}" /><br />
+                    Entrega 1 já realizada? <h:selectOneRadio value="#{grupoBean.ok_1}">
+                        <f:selectItem itemValue="true" itemLabel="Sim" />
+                        <f:selectItem itemValue="false" itemLabel="Não" />
+                    </h:selectOneRadio>
+                    Nota da Entrega 1: <h:inputText value="#{grupoBean.nota_1}" /><br />
+                    Entrega 2 já realizada? <h:selectOneRadio value="#{grupoBean.ok_2}">
+                        <f:selectItem itemValue="true" itemLabel="Sim" />
+                        <f:selectItem itemValue="false" itemLabel="Não" />
+                    </h:selectOneRadio>
+                    Nota da Entrega 2: <h:inputText value="#{grupoBean.nota_2}" /><br />
+                    Entrega 3 já realizada? <h:selectOneRadio value="#{grupoBean.ok_3}">
+                        <f:selectItem itemValue="true" itemLabel="Sim" />
+                        <f:selectItem itemValue="false" itemLabel="Não" />
+                    </h:selectOneRadio>
+                    Nota da Entrega 3: <h:inputText value="#{grupoBean.nota_3}" /><br /><br />
+                    <h:commandButton value="Salvar" action="#{grupoBean.saveGrupo()}" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+</html>
+
